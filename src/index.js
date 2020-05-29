@@ -50,9 +50,6 @@ var stats = new Stats();
 document.body.appendChild(stats.domElement);
 
 // sky sphere
-const mEnvMap = new THREE.TextureLoader().load('/assets/RefMap.jpg');
-mEnvMap.mapping = THREE.EquirectangularReflectionMapping;
-
 const mUniforms = {
   time: { value: 0 },
   paused: { value: 0 },
@@ -61,7 +58,6 @@ const mUniforms = {
   positionTex: { value: 0.0 },
   lightCol: { value: new THREE.Color("#ff0776") },
   shadowCol: { value: new THREE.Color("#0150ff") },
-  envMap: { value: mEnvMap }
 };
 
 const skyMat = new THREE.ShaderMaterial({
@@ -76,14 +72,14 @@ scene.add(skySphere)
 
 //"UI" elements 
 let objLoader = new THREE.OBJLoader();
-objLoader.load("/assets/ground_rect.obj", (tex) => {
+objLoader.load("assets/ground_rect.obj", (tex) => {
   let mesh = tex.children[0];
   mesh.material = new THREE.MeshBasicMaterial();
   mesh.position.y = -2.5;
   scene.add(mesh);
 });
 
-objLoader.load("/assets/frame_rect.obj", (tex) => {
+objLoader.load("assets/frame_rect.obj", (tex) => {
   let mesh = tex.children[0];
   mesh.material = new THREE.MeshBasicMaterial();
   mesh.position.y = 3.5;
@@ -103,7 +99,7 @@ const buttonMat = new THREE.ShaderMaterial({
 });
 
 let buttonBoundingBoxes = [];
-["/assets/melt_text.obj", "/assets/pause_text.obj", "/assets/reset_text.obj"].forEach((path) => {
+["assets/melt_text.obj", "assets/pause_text.obj", "assets/reset_text.obj"].forEach((path) => {
   objLoader.load(path, (tex) => {
     let mesh = tex.children[0];
     mesh.material = buttonMat;

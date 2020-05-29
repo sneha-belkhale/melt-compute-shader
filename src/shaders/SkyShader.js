@@ -19,8 +19,6 @@ const SkyShader = {
       uniform vec3 lightCol;
       uniform vec3 shadowCol;
 
-      uniform sampler2D envMap;
-
       void main() {
         float lerp = vUv.y;
         float width = 0.3;

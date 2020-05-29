@@ -53,7 +53,7 @@ new Promise((resolve, reject) => {
     });
     
     const gltf = await load(
-      "/assets/face.gltf"
+      "assets/face.gltf"
       );
       let geo;
       if (gltf.scene && gltf.scene.children) {
