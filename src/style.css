@@ -1,0 +1,11 @@
+body, html {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.ui {
+  position: absolute;
+  font-family: monospace;
+  font-size: 70px;
+}

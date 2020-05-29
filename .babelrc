@@ -1,0 +1,14 @@
+{
+  "presets": [
+    "@babel/preset-env"
+  ],
+  "plugins": [
+    "transform-regenerator",
+    [
+      "@babel/plugin-transform-react-jsx",
+      {
+        "pragma": "JSX.createElement"
+      }
+    ]
+  ]
+}
