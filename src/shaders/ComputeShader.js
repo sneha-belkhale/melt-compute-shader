@@ -75,7 +75,7 @@ const ComputeShader = {
 
         // float magn = clamp(length(prevVel) + 0.1, 0., 10.);
         // vec3 curlVelocity = 0.005 * magn * s(0.17 * prevPos + 0.3 * time, 7.) + 0.9 * prevVel;
-        vec3 z = 0.002 * (1.0 - min(length(mousePos - prevPos) / 1., 1.)) * (mousePos - prevPos); 
+        vec3 z = 0.01 * (1.0 - min(length(mousePos - prevPos) / 1., 1.)) * (mousePos - prevPos); 
         z.z = 0.0;
 
         float magn = yDropSpeed * clamp((-prevPos.y + 3.) + yTimeSpeed * time, 0., 6.0);
