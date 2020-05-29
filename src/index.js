@@ -46,8 +46,8 @@ if(isMobile)
   controls.update();
 }
 
-var stats = new Stats();
-document.body.appendChild(stats.domElement);
+//var stats = new Stats();
+//document.body.appendChild(stats.domElement);
 
 // sky sphere
 const mUniforms = {
@@ -240,7 +240,7 @@ function shakeCamera() {
 let startTime = Date.now();
 let currentTime;
 function animate() {
-  stats.begin();
+  //stats.begin();
   let deltaTime = Date.now() - currentTime - startTime;
   currentTime = Date.now() - startTime;
   if (meltMesh) {
@@ -262,7 +262,7 @@ function animate() {
     controls.update();
   }
   renderer.render(scene, camera);
-  stats.end();
+  //stats.end();
 
 }
 animate();
